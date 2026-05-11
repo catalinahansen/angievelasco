@@ -1,0 +1,495 @@
+
+/* Este bloque cubre desde tablets hasta el iPhone 14 Pro (393px) */
+@media (max-width: 768px) {
+    
+    /* 1. Corregir el error de 'relative' a 'column' */
+    .hero, #propuestas, .card-group, .contenedor, .row, .card-custom, .card {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center;
+        text-align: center;
+        width: 100% !important;
+        position: static !important;
+        max-width: 100%;
+    }
+
+    /* 2. Resetear el grid que rompe la sección de videos y propuestas */
+    .contenedor, .card {
+        display: flex !important;
+        grid-template-columns: none !important;
+        width: 100% !important;
+    }
+
+    /* 3. Ajustar las imágenes para que no desborden los 393px */
+    img, .card img, .girl, .calendar-card img {
+        width: 100% !important;
+        max-width: 320px; /* Tamaño ideal para que sobre margen en 393px */
+        height: auto;
+        position: static !important;
+        margin: 10px auto;
+    }
+
+    /* 4. Liberar el texto para que ocupe el ancho del celular */
+    .col-md-4, .col-md-8, .card p, .card-text {
+        width: 90% !important;
+        padding: 10px !important;
+        flex: none !important;
+        font-size: 18px;
+    }
+
+    /* 5. Ajustar el Hero */
+    .left h1 {
+        font-size: 2.2rem;
+    }
+    
+    .left h2 {
+        font-size: 1.5rem;
+    }
+
+    /* 6. Ajustar el Calendario */
+    .calendar-card {
+        width: 90% !important;
+        margin-bottom: 20px;
+    }
+}
+/* 1. La tarjeta debe ser un contenedor flexible */
+.card-custom {
+    display: flex !important;
+    flex-direction: row; /* Imagen y texto en línea */
+    align-items: center;
+    width: 100% !important; /* Que ocupe todo el ancho de la sección */
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1); /* Opcional: para que se note el fondo */
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* 2. El contenedor de la imagen */
+.col-md-4 {
+    flex: 0 0 340px; /* No deja que la imagen se encoja ni crezca de 340px */
+}
+
+.col-md-4 img {
+    width: 100%;
+    display: block;
+}
+
+/* 3. El contenedor del texto (ESTE ES EL SECRETO) */
+.col-md-8 {
+    flex: 1; /* Esto le dice: "ocupa TODO el espacio que sobra" */
+    padding: 20px 40px;
+}
+
+/* 4. Ajustar el párrafo para que no tenga ancho fijo */
+.card-text {
+    width: 100% !important; /* Quitamos los 180px que tenías antes */
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+body { 
+        
+    margin: 0;
+background: #2a9b4e;
+background:  #3F5EFB;
+background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    min-height: 100vh;
+          /*font-family: 'Brygada 1918', serif; line-height: 1.6; margin: 0; */
+        header, footer { background: #3F5EFB;
+background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%); text-align: center; padding: 1rem; }
+        section { padding: 40px; border-bottom: 1px solid #ccc; min-height: 100px; }
+        .container { max-width: 800px; margin: auto; }
+        form { display: flex; flex-direction: column; gap: 10px; }
+        input, button, textarea { padding: 10px; border-radius: 5px; border: 1px solid #ddd; }
+        button { background: #28a745; color: white; cursor: pointer; border: none; }
+        button:hover { background: #218838; }
+        .error { color: red; font-size: 0.9rem; display: none; }
+        }
+        
+.propuestas-cards{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.card-custom{
+      flex: 1;
+    text-align: 100%;
+}
+.card-body{
+    width: 100%;
+    padding: 40px;
+}
+
+.card-horizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+
+    background: transparent;
+    border: none;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.card img{
+    width: 400px;
+    border-radius: 20px;
+}
+
+.card-body{
+    width: 100%;
+}
+
+    /* TEXTO IZQUIERDA */
+    .left {
+      width: 45%;
+      z-index: 2;
+    }
+
+    .left h1 {
+      font-family: 'Alfa Slab One', serif;
+      font-size: 60px;
+      letter-spacing: 3px;
+      color: white;
+      text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .left h2 {
+      color: white;
+      font-size: 35px;
+      font-family: 'Brygada 1918', serif;
+    }
+
+    .left h3 {
+      font-family: 'Alfa Slab One', serif;
+      color: white;
+      font-size: 35px;
+      margin-top: 40px;
+      max-width: 700px;
+      text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+
+       /* INFO DERECHA */
+    .info {
+      position: absolute;
+      right: 100px;
+      top: 250px;
+
+      color: white;
+      text-align: center;
+
+      z-index: 2;
+    }
+
+    /* BOTON */
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+
+      background: #e6ff00;
+      color: black;
+
+      padding: 18px 55px;
+      border-radius: 40px;
+
+      text-decoration: none;
+      font-size: 32px;
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* IMAGEN */
+    .girl {
+      position: absolute;
+      bottom: 0;
+      right: 200px;
+
+      height: 88%;
+      object-fit: contain;
+    }
+
+
+    .card-videos{
+  width: 80%;
+  height: 13px;
+  display: flex;
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
+  border-radius: 1rem;
+  background-color: rgb(22, 207, 192);
+  padding: 1.5rem;
+}
+
+.card-1 { /* primera de seccion 3*/
+  width: 40%;
+  border-radius: 0.75rem;
+  background-color: var(--gray);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) alternate-reverse infinite;
+}
+
+.right {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
+}
+
+.card-2 { /*segunda de seccion 3*/
+  height: 3.5rem;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--gray);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) alternate-reverse infinite;
+}
+
+.card-3 { /*tercera de seccion 3*/
+  height: 0.75rem;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--gray);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) alternate-reverse infinite;
+}
+
+.bottom {
+  margin-top: auto;
+  display: flex;
+  grid-gap: 0.75rem;
+  gap: 0.75rem;
+}
+
+.card-4 { /*cuarta de seccion 3*/
+  height: 2rem;
+  width: 33%;
+  border-radius: 9999px;
+  background-color: var(--gray);
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) alternate-reverse infinite;
+}
+
+@keyframes pulse {
+  to {
+    opacity: .2;
+  }
+}
+      
+#calendario .card-group{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.calendar-card{
+    width:300px;
+    background:rgb(250, 249, 249);
+    border-radius:20px;
+    overflow:hidden;
+    padding:20px;
+}
+
+.calendar-card img{
+    width:100%;
+    border-radius:15px;
+}
+
+.card-body{
+    padding:10px 0;
+}
+footer{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+
+    padding:10px 20px;
+
+
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+/* lista de redes */
+.social-list{
+    align-items:center;
+    display:flex;
+    gap:20px;
+
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+/* cada item */
+.social-item{
+    list-style:none;
+}
+
+/* links */
+.social-link{
+    color:white;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* iconos */
+
+.social-link svg{
+    width:28px;
+    height:28px;
+}
+.card{
+  display:grid;
+
+  grid-template-columns: auto auto;
+
+  align-items:center;
+
+  gap:20px;
+
+  width:max-content;
+}
+.card p{
+  color:rgb(0, 0, 0);
+
+  font-size:22px;
+
+  line-height:1.3;
+
+  width:180px;
+}
+.card img{
+  width:340px;
+  height:190px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+
+  display:block;
+}
+
+.contenedor{
+  width:90%;
+  max-width:1200px;
+
+  padding:40px;
+
+  border-radius:40px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(120,90,200,0.9),
+    rgba(120,120,120,0.8),
+    rgba(70,180,180,0.8)
+  );
+
+  display:grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap:30px;
+  display:grid;
+
+  grid-template-columns: repeat(2, max-content);
+
+  justify-content:center;
+
+  gap:30px;
+}
+@media (max-width: 400px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .left, .info {
+        position: static;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .left h1 {
+        font-size: 32px;
+        line-height: 1.1;
+    }
+
+    .left h2 {
+        font-size: 20px;
+    }
+
+    .girl {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-width: 300px; 
+        margin-top: 20px;
+    }
+
+    /* SECCIÓN PROPUESTAS Y CARDS */
+    .card-custom, .card {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column !important; 
+        align-items: center;
+    }
+
+    .card img {
+        width: 100% !important;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .card p {
+        width: 90%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    /* CONTENEDOR DE VIDEOS  */
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr; 
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px 10px;
+    }
+
+    /* BOTONES */
+    .btn {
+        font-size: 20px;
+        padding: 12px 30px;
+        width: 80%;
+    }
+
+    /* CALENDARIO */
+    .calendar-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
